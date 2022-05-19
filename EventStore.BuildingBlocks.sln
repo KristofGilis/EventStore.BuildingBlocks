@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStore.BuildingBlocks.Domain", "EventStore.BuildingBlocks.Domain\EventStore.BuildingBlocks.Domain.csproj", "{EA48DE77-1364-40B3-8AD0-A20B22264E9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStore.BuildingBlocks.Infrastructure", "EventStore.BuildingBlocks.Infrastructure\EventStore.BuildingBlocks.Infrastructure.csproj", "{A6DA1E71-0FA1-4DF1-ADB5-74209C572D9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA48DE77-1364-40B3-8AD0-A20B22264E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA48DE77-1364-40B3-8AD0-A20B22264E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA48DE77-1364-40B3-8AD0-A20B22264E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA48DE77-1364-40B3-8AD0-A20B22264E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DA1E71-0FA1-4DF1-ADB5-74209C572D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DA1E71-0FA1-4DF1-ADB5-74209C572D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DA1E71-0FA1-4DF1-ADB5-74209C572D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DA1E71-0FA1-4DF1-ADB5-74209C572D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0995BE74-A8F2-417A-BCC4-BE4181A01BDC}
+	EndGlobalSection
+EndGlobal
