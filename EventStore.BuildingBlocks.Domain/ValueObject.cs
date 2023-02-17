@@ -6,7 +6,7 @@ namespace EventStore.BuildingBlocks.Domain;
 public abstract class ValueObject<T>
         where T : ValueObject<T>
 {
-    private static readonly Member[] Members = GetMembers().ToArray();
+    private static readonly Member[] _members = GetMembers().ToArray();
 
     public override bool Equals(object? obj)
     {
@@ -16,7 +16,7 @@ public abstract class ValueObject<T>
         if (ReferenceEquals(this, obj))
             return true;
 
-        return obj.GetType() == typeof(T) && Members.All(m =>
+        return obj.GetType() == typeof(T) && _members.All(m =>
         {
             var otherValue = m.GetValue(obj);
             var thisValue = m.GetValue(this);
@@ -28,7 +28,7 @@ public abstract class ValueObject<T>
 
     public override int GetHashCode() =>
         CombineHashCodes(
-            Members.Select(m => m.IsNonStringEnumerable
+            _members.Select(m => m.IsNonStringEnumerable
                 ? CombineHashCodes(GetEnumerableValues(m.GetValue(this)))
                 : m.GetValue(this)));
 

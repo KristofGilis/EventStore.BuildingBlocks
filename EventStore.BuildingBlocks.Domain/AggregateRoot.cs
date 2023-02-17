@@ -4,8 +4,8 @@ namespace EventStore.BuildingBlocks.Domain;
 
 public abstract class AggregateRoot
 {
-    private readonly List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
-    private readonly List<IIntegrationEvent> _integrationEvents = new List<IIntegrationEvent>();
+    private readonly List<IDomainEvent> _domainEvents = new();
+    private readonly List<IIntegrationEvent> _integrationEvents = new();
 
     protected AggregateRoot()
     {
