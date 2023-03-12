@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace EventStore.BuildingBlocks.Domain;
 
@@ -21,7 +22,7 @@ public abstract class AggregateRoot
     [IgnoreDataMember]
     public IReadOnlyCollection<IIntegrationEvent> IntegrationEvents => _integrationEvents.AsReadOnly();
 
-    [IgnoreDataMember]
+    [IgnoreDataMember, NotMapped]
     public IReadOnlyCollection<ValidationException> ValidationExceptions => _validationExceptions.AsReadOnly();
 
     protected virtual void ApplyAndAddEvent(IDomainEvent @event) { }
