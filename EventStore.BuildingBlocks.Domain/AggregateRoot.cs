@@ -36,8 +36,11 @@ public abstract class AggregateRoot
         _integrationEvents.Add(eventItem);
     }
 
-    protected void AddValidationException(ValidationException validationException)
+    protected void AddValidationException(ValidationException validationException, bool throwDirectly = false)
     {
+        if (throwDirectly)
+            throw validationException;
+
         _validationExceptions.Add(validationException);
     }
 
