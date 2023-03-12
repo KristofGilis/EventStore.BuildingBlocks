@@ -6,6 +6,7 @@ public abstract class AggregateRoot
 {
     private readonly List<IDomainEvent> _domainEvents = new();
     private readonly List<IIntegrationEvent> _integrationEvents = new();
+    private readonly List<ValidationException> _validationExceptions = new();
 
     protected AggregateRoot()
     {
@@ -20,6 +21,9 @@ public abstract class AggregateRoot
     [IgnoreDataMember]
     public IReadOnlyCollection<IIntegrationEvent> IntegrationEvents => _integrationEvents.AsReadOnly();
 
+    [IgnoreDataMember]
+    public IReadOnlyCollection<ValidationException> ValidationExceptions => _validationExceptions.AsReadOnly();
+
     protected virtual void ApplyAndAddEvent(IDomainEvent @event) { }
 
     protected void AddDomainEvent(IDomainEvent eventItem)
@@ -32,6 +36,11 @@ public abstract class AggregateRoot
         _integrationEvents.Add(eventItem);
     }
 
+    protected void AddValidationException(ValidationException validationException)
+    {
+        _validationExceptions.Add(validationException);
+    }
+
     protected void ClearDomainEvents()
     {
         _domainEvents.Clear();
@@ -42,6 +51,11 @@ public abstract class AggregateRoot
         _integrationEvents.Clear();
     }
 
+    protected void ClearValidationExceptions()
+    {
+        _validationExceptions.Clear();
+    }
+
     protected void RemoveDomainEvent(IDomainEvent eventItem)
     {
         _domainEvents.Remove(eventItem);
@@ -50,5 +64,10 @@ public abstract class AggregateRoot
     protected void RemoveIntegrationEvent(IIntegrationEvent eventItem)
     {
         _integrationEvents.Remove(eventItem);
+    }
+
+    protected void RemoveValidationException(ValidationException validationException)
+    {
+        _validationExceptions.Remove(validationException);
     }
 }
