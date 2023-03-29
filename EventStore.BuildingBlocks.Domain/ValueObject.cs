@@ -10,7 +10,7 @@ public abstract class ValueObject<T>
 
     public override bool Equals(object? obj)
     {
-        if (ReferenceEquals(null, obj))
+        if (obj is null)
             return false;
 
         if (ReferenceEquals(this, obj))
@@ -63,7 +63,7 @@ public abstract class ValueObject<T>
         }
     }
 
-    private struct Member
+    private readonly struct Member
     {
         public readonly Func<object, object> GetValue;
         public readonly bool IsNonStringEnumerable;
